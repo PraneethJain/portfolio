@@ -16,7 +16,7 @@ main:
 
   mov [serveraddr_in.sin_family], word AF_INET
   mov [serveraddr_in.sin_addr], dword 0
-  mov [serveraddr_in.sin_port], word 16415
+  mov [serveraddr_in.sin_port], word 36895
 
   print STDOUT, binding_info
   bind [server_fd], serveraddr_in.sin_family, serveraddr_in.size
