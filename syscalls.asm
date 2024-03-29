@@ -1,7 +1,24 @@
 ;; https://www.chromium.org/chromium-os/developer-library/reference/linux-constants/syscalls/
 
-SYS_write equ 1
-SYS_exit equ 60
+SYS_write     equ 1
+SYS_close     equ 3
+SYS_socket    equ 41
+SYS_accept    equ 43
+SYS_bind      equ 49
+SYS_listen    equ 50
+SYS_exit      equ 60
+
+SOCK_STREAM   equ 1
+AF_INET       equ 2
+
+STDIN         equ 0
+STDOUT        equ 1
+STDERR        equ 2
+
+EXIT_SUCCESS  equ 0
+EXIT_FAILURE  equ 1
+
+MAX_BACKLOG   equ 16
 
 macro syscall1 nr, arg0
 {
@@ -65,7 +82,32 @@ macro exit code
   syscall1 SYS_exit, code
 }
 
+macro close fd
+{
+  syscall1 SYS_close, fd
+}
+
+macro listen sockfd, backlog
+{
+  syscall2 SYS_listen, sockfd, backlog
+}
+
 macro write fd, buf, count
 {
   syscall3 SYS_write, fd, buf, count
+}
+
+macro socket socket_family, socket_type, protocol
+{
+  syscall3 SYS_socket, socket_family, socket_type, protocol
+}
+
+macro bind socket, address, address_len
+{
+  syscall3 SYS_bind, socket, address, address_len
+}
+
+macro accept socket, address, address_len
+{
+  syscall3 SYS_accept, socket, address, address_len
 }

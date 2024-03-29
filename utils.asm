@@ -13,12 +13,11 @@ strlen:
   .strlenret:
     ret
 
-macro print string
+macro print fd, string
 {
   mov rdi, string
   call strlen
   mov rdx, rax
-  write 1, hello, rdx
+  write fd, string, rdx
 }
-
 
