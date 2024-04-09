@@ -17,3 +17,7 @@ db '  </body>', 10
 db '</html>', 10
 }
 
+macro h i, text
+{
+db '<h',i+'0','>',text,'</h',i+'0','>', 10
+}
