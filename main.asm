@@ -36,7 +36,7 @@ main:
     jl fatal
 
     print [client_fd], index_page_response
-    print [client_fd], index_page_header
+    print [client_fd], index_page
     close [client_fd]
 
     jmp .mainloop

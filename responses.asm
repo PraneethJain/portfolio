@@ -1,7 +1,12 @@
-index_page_response  db "HTTP/1.1 200 OK", 13, 10
-                     db "Content-Type: text/html; charset=utf-8", 13, 10
-                     db "Connection: close", 13, 10
-                     db 13, 10
+include "html.asm"
+
+index_page_response  db "HTTP/1.1 200 OK", CRLF
+                     db "Content-Type: text/html; charset=utf-8", CRLF
+                     db "Connection: close", CRLF
+                     db CRLF
                      db 0
 
-index_page_header    db "<h1>Hello from assembly!</h1>", 10
+index_page           db 10
+                     html_start "Nice Title"
+                     db "<h1>Inside the html </h1>"
+                     html_end
