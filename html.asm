@@ -8,7 +8,7 @@ db '  <head>', 10
 db '    <meta charset="UTF-8" />', 10
 db '    <title>',title,'</title>', 10
 db '  </head>', 10
-db '  <body style="padding: 0; margin: 0;">', 10
+db '  <body style="padding: 0; margin: 0; font-family: monospace;">', 10
 }
 
 macro html_end
