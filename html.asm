@@ -29,7 +29,7 @@ db '<h',i+'0','>',text,'</h',i+'0','>', 10
 
 macro link href, component
 {
-db '<a href="',href,'">'
+db '<a href="',href,'" style="color: #3391ff">'
 component
 db '</a>', 10
 }
@@ -37,6 +37,21 @@ db '</a>', 10
 macro div style, [components]
 {
 common db '<div style="',style,'">', 10
+forward components
+common db '</div>', 10
+}
+
+macro flexcol style, [components]
+{
+common db '<div style="display: flex; flex-direction: column; ',style,'">', 10
+forward components
+common db '</div>', 10
+}
+
+
+macro flexrow style, [components]
+{
+common db '<div style="display: flex; flex-direction: row; ',style,'">', 10
 forward components
 common db '</div>', 10
 }
