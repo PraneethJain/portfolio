@@ -1,5 +1,6 @@
 ;; https://www.chromium.org/chromium-os/developer-library/reference/linux-constants/syscalls/
 
+SYS_read      equ 0
 SYS_write     equ 1
 SYS_close     equ 3
 SYS_socket    equ 41
@@ -90,6 +91,11 @@ macro close fd
 macro listen sockfd, backlog
 {
   syscall2 SYS_listen, sockfd, backlog
+}
+
+macro read  fd, buf, count
+{
+  syscall3 SYS_read,  fd, buf, count
 }
 
 macro write fd, buf, count

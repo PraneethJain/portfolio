@@ -1,5 +1,7 @@
 format ELF64 executable
 
+MAX_REQ_LEN equ 1024 * 64
+
 include "syscalls.asm"
 
 segment readable executable
@@ -34,6 +36,13 @@ main:
     mov [client_fd], rax 
     cmp rax, 0
     jl fatal
+
+    read [client_fd], req, MAX_REQ_LEN
+    mov  [req_len], rax
+    cmp rax, 0
+    jl fatal
+
+    write STDOUT, req, [req_len]
 
     print [client_fd], index_page_response
     print [client_fd], index_page
@@ -72,6 +81,9 @@ serveraddr_in   servaddr_in_struc
 clientaddr_in   servaddr_in_struc
 clientaddr_len  dd clientaddr_in.size
 
+req             rb MAX_REQ_LEN
+req_len         rq 1
+
 
 socket_info     db "[INFO] Creating Socket...", 10, 0
 binding_info    db "[INFO] Binding Socket...", 10, 0
@@ -81,4 +93,3 @@ closing_info    db "[INFO] Closing Socket...", 10, 0
 done_info       db "[INFO] Done!", 10, 0
 fatal_error     db "[ERROR] Fatal! Cannot Recover.", 10, 0
 message         db "Hello from fasm!", 10, 0
-
