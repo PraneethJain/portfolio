@@ -16,6 +16,14 @@ main:
   cmp rax, 0
   jl fatal
 
+  setsockopt [server_fd], SOL_SOCKET, SO_REUSEADDR, enable, 4
+  cmp rax, 0
+  jl fatal
+
+  setsockopt [server_fd], SOL_SOCKET, SO_REUSEPORT, enable, 4
+  cmp rax, 0
+  jl fatal
+
   mov [serveraddr_in.sin_family], word AF_INET
   mov [serveraddr_in.sin_addr], dword 0
   mov [serveraddr_in.sin_port], word 36895
@@ -42,7 +50,8 @@ main:
     cmp rax, 0
     jl fatal
 
-    write STDOUT, req, [req_len]
+    check_route req, about_route
+    ; write STDOUT, req, [req_len]
 
     print [client_fd], index_page_response
     print [client_fd], index_page
@@ -75,16 +84,19 @@ struc servaddr_in_struc
   .size = $ - .sin_family
 }
 
+;; variables
 server_fd       dq -1
 client_fd       dq -1
 serveraddr_in   servaddr_in_struc
 clientaddr_in   servaddr_in_struc
 clientaddr_len  dd clientaddr_in.size
+enable          dd 1
 
 req             rb MAX_REQ_LEN
 req_len         rq 1
 
 
+;; debug messages
 socket_info     db "[INFO] Creating Socket...", 10, 0
 binding_info    db "[INFO] Binding Socket...", 10, 0
 listening_info  db "[INFO] Listening...", 10, 0
@@ -93,3 +105,8 @@ closing_info    db "[INFO] Closing Socket...", 10, 0
 done_info       db "[INFO] Done!", 10, 0
 fatal_error     db "[ERROR] Fatal! Cannot Recover.", 10, 0
 message         db "Hello from fasm!", 10, 0
+
+;; routes
+about_route     db "about", 0
+projects_route  db "projects", 0
+skills_route    db "skills", 0
