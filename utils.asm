@@ -50,7 +50,7 @@ check_route:
   add rdi, 5
   .routecheckloop:
     cmp byte [rdi], 32
-    je .routechecksuccess
+    je .routecheckintermediate
 
     mov al, byte [rdi]
     mov bl, byte [rsi]
@@ -61,6 +61,11 @@ check_route:
     inc rsi
     
     jmp .routecheckloop
+
+  .routecheckintermediate:
+    cmp byte [rsi], 0
+    je .routechecksuccess
+    jne .routecheckfailure
 
   .routechecksuccess:
     mov rax, 1
