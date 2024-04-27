@@ -50,13 +50,65 @@ main:
     cmp rax, 0
     jl fatal
 
-    check_route req, about_route
-    ; write STDOUT, req, [req_len]
+    mov rdi, req
+    call trim_first_line
 
+    mov rdi, req
+    mov rsi, home_route
+    call check_route
+    cmp rax, 0
+    jne .serve_home_route
+    
+    ; check_route req, about_route
+    ; cmp rax, 0
+    ; jne .serve_about_page
+
+    ; check_route req, projects_route
+    ; cmp rax, 0
+    ; jne .serve_projects_page
+
+    ; check_route req, skills_route
+    ; cmp rax, 0
+    ; jne .serve_skills_page
+
+  .serve_not_found:
+    print_char STDOUT, 'N'
+    print_char STDOUT, 10
     print [client_fd], index_page_response
     print [client_fd], index_page
     close [client_fd]
+    jmp .mainloop
 
+  .serve_home_route:
+    print_char STDOUT, 'H'
+    print_char STDOUT, 10
+    print [client_fd], index_page_response
+    print [client_fd], index_page
+    close [client_fd]
+    jmp .mainloop
+
+  .serve_about_page:   
+    print_char STDOUT, 'A'
+    print_char STDOUT, 10
+    print [client_fd], index_page_response
+    print [client_fd], index_page
+    close [client_fd]
+    jmp .mainloop
+  
+  .serve_projects_page:   
+    print_char STDOUT, 'P'
+    print_char STDOUT, 10
+    print [client_fd], index_page_response
+    print [client_fd], index_page
+    close [client_fd]
+    jmp .mainloop
+
+  .serve_skills_page:   
+    print_char STDOUT, 'S'
+    print_char STDOUT, 10
+    print [client_fd], index_page_response
+    print [client_fd], index_page
+    close [client_fd]
     jmp .mainloop
 
   print STDOUT, closing_info
@@ -107,6 +159,7 @@ fatal_error     db "[ERROR] Fatal! Cannot Recover.", 10, 0
 message         db "Hello from fasm!", 10, 0
 
 ;; routes
-about_route     db "about", 0
-projects_route  db "projects", 0
-skills_route    db "skills", 0
+home_route      db "/", 0
+about_route     db "/about", 0
+projects_route  db "/projects", 0
+skills_route    db "/skills", 0
