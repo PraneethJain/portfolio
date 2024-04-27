@@ -53,24 +53,11 @@ main:
     mov rdi, req
     call trim_first_line
 
-    mov rdi, req
-    mov rsi, home_route
-    call check_route
-    cmp rax, 0
-    jne .serve_home_route
+    serve_route req, home
+    serve_route req, about
+    serve_route req, projects
+    serve_route req, skills
     
-    ; check_route req, about_route
-    ; cmp rax, 0
-    ; jne .serve_about_page
-
-    ; check_route req, projects_route
-    ; cmp rax, 0
-    ; jne .serve_projects_page
-
-    ; check_route req, skills_route
-    ; cmp rax, 0
-    ; jne .serve_skills_page
-
   .serve_not_found:
     print_char STDOUT, 'N'
     print_char STDOUT, 10
@@ -79,7 +66,7 @@ main:
     close [client_fd]
     jmp .mainloop
 
-  .serve_home_route:
+  .serve_home:
     print_char STDOUT, 'H'
     print_char STDOUT, 10
     print [client_fd], index_page_response
@@ -87,7 +74,7 @@ main:
     close [client_fd]
     jmp .mainloop
 
-  .serve_about_page:   
+  .serve_about:
     print_char STDOUT, 'A'
     print_char STDOUT, 10
     print [client_fd], index_page_response
@@ -95,7 +82,7 @@ main:
     close [client_fd]
     jmp .mainloop
   
-  .serve_projects_page:   
+  .serve_projects:
     print_char STDOUT, 'P'
     print_char STDOUT, 10
     print [client_fd], index_page_response
@@ -103,7 +90,7 @@ main:
     close [client_fd]
     jmp .mainloop
 
-  .serve_skills_page:   
+  .serve_skills:
     print_char STDOUT, 'S'
     print_char STDOUT, 10
     print [client_fd], index_page_response
@@ -159,7 +146,7 @@ fatal_error     db "[ERROR] Fatal! Cannot Recover.", 10, 0
 message         db "Hello from fasm!", 10, 0
 
 ;; routes
-home_route      db "/", 0
-about_route     db "/about", 0
-projects_route  db "/projects", 0
-skills_route    db "/skills", 0
+home     db "", 0
+about    db "about", 0
+projects db "projects", 0
+skills   db "skills", 0

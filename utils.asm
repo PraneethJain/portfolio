@@ -47,7 +47,7 @@ macro print fd, string
 ;; rsi    - route string
 ;; retval - rax
 check_route:
-  add rdi, 4
+  add rdi, 5
   .routecheckloop:
     cmp byte [rdi], 32
     je .routechecksuccess
@@ -70,3 +70,12 @@ check_route:
     mov rax, 0
     ret
 
+
+macro serve_route req, route
+{
+  mov rdi, req
+  mov rsi, route
+  call check_route
+  cmp rax, 0
+  jne .serve_#route
+}
