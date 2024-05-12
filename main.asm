@@ -61,7 +61,7 @@ main:
   .serve_not_found:
     print_char STDOUT, 'N'
     print_char STDOUT, 10
-    print [client_fd], index_page_response
+    print [client_fd], found_page_response
     print [client_fd], index_page
     close [client_fd]
     jmp .mainloop
@@ -69,7 +69,7 @@ main:
   .serve_home:
     print_char STDOUT, 'H'
     print_char STDOUT, 10
-    print [client_fd], index_page_response
+    print [client_fd], found_page_response
     print [client_fd], index_page
     close [client_fd]
     jmp .mainloop
@@ -77,7 +77,7 @@ main:
   .serve_about:
     print_char STDOUT, 'A'
     print_char STDOUT, 10
-    print [client_fd], index_page_response
+    print [client_fd], found_page_response
     print [client_fd], index_page
     close [client_fd]
     jmp .mainloop
@@ -85,15 +85,15 @@ main:
   .serve_projects:
     print_char STDOUT, 'P'
     print_char STDOUT, 10
-    print [client_fd], index_page_response
-    print [client_fd], index_page
+    print [client_fd], found_page_response
+    print [client_fd], projects_page
     close [client_fd]
     jmp .mainloop
 
   .serve_skills:
     print_char STDOUT, 'S'
     print_char STDOUT, 10
-    print [client_fd], index_page_response
+    print [client_fd], found_page_response
     print [client_fd], index_page
     close [client_fd]
     jmp .mainloop
