@@ -55,3 +55,18 @@ common db '<div style="display: flex; flex-direction: row; ',style,'">', 10
 forward components
 common db '</div>', 10
 }
+
+macro project_card title, description, [tech_stack]
+{
+
+common
+    db '<div style="display: flex; flex-direction: column; justify-content: space-between;border: 2px dashed white; padding: 1rem 0; text-align: center; width: 20rem; height: 20rem;">', 10
+    h 1, title
+    div "font-size: 1rem;", ! description
+    db '<div style="display: flex; justify-content: space-evenly; font-size: 1rem; flex-wrap: wrap;">'
+forward
+    div "", ! tech_stack
+common
+    db '</div>'
+    db '</div>', 10
+}

@@ -26,7 +26,7 @@ index_page           db 10
 
 projects_page        db 10
                      html_start "Projects"
-                     flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: space-evenly; background-color: black; color: white;", \
-                        <h 1, "Projects Page">, \
+                     flexrow "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: space-evenly; background-color: black; color: white;", \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
                      db 0
                      html_end
