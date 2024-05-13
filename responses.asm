@@ -26,7 +26,22 @@ index_page           db 10
 
 projects_page        db 10
                      html_start "Projects"
-                     flexrow "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: space-evenly; background-color: black; color: white;", \
+                     flexrow "min-width: 100vw; min-height: 100vh; background-color: black; color: white; flex-wrap: wrap; justify-content: center;", \
+                        <project_card "AutoVCO", "Neural Network based Adaptive Voltage Controlled Oscillator using Tensorflow and MicroCap12", "Tensorflow", "ESP32", "Python", "C++">, \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
+                        <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
                         <project_card "AutoVCO", "ML-Driven Adaptive Voltage Controlled Oscillator", "Tensorflow", "ESP32", "Python", "C++">, \
                      db 0
                      html_end
