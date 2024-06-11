@@ -12,14 +12,14 @@ index_page           db 10
                      flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: space-evenly; background-color: black; color: white;", \
                         <h 1, "Moida Praneeth Jain">, \
                         pfp, \
-                        <flexrow "font-size: 24px; width: 40%; justify-content: space-evenly;", \
+                        <flexrow "font-size: 24px; width: 30rem; justify-content: space-evenly;", \
                            <link "/projects", ! "/projects">, \
                            <link "/skills", ! "/skills">, \
                            <link "/about", ! "/about"> \
                         >, \
-                        <flexrow "font-size: 24px; width: 30%; justify-content: space-evenly;", \
-                           <link "/d", ! "/d">, \
-                           <link "/e", ! "/e"> \
+                        <flexrow "font-size: 24px; width: 20rem; justify-content: space-evenly;", \
+                           <link "/resume", ! "/resume">, \
+                           <link "/links", ! "/blog"> \
                         >, \
                      db 0
                      html_end
