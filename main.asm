@@ -100,7 +100,7 @@ main:
     print_char STDOUT, 'P'
     print_char STDOUT, 10
     print [client_fd], found_page_response
-    print [client_fd], index_page
+    print [client_fd], links_page
     close [client_fd]
     jmp .mainloop
 

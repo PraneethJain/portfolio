@@ -24,6 +24,24 @@ index_page           db 10
                      db 0
                      html_end
 
+links_page           db 10
+                     html_start "Praneeth Jain"
+                     flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: center; background-color: black; color: white; font-size: 2rem;", \
+                        <link "https://github.com/PraneethJain/", ! "Github">, \
+                        <link "https://gitlab.com/PraneethJain", ! "Gitlab">, \
+                        <link "https://stackoverflow.com/users/18171521/praneeth-jain", ! "StackOverflow">, \
+                        <link "https://www.linkedin.com/in/praneeth-jain/", ! "LinkedIn">, \
+                        <link "mailto:praneethjain005@gmail.com", ! "Mail">, \
+                        <link "https://discord.com/users/478215148234866728", ! "Discord">, \
+                        <link "https://steamcommunity.com/profiles/76561198879507582", ! "Steam">, \
+                        <link "https://www.instagram.com/mpraneethjain/", ! "Instagram">, \
+                        <link "https://www.facebook.com/profile.php?id=100087488941910", ! "Facebook">, \
+                        <link "https://x.com/bants78", ! "X">, \
+                     db 0
+
+                     db 0
+                     html_end
+
 projects_page        db 10
                      html_start "Projects"
                      flexcol "min-width: 100vw; min-height: 100vh; background-color: black; color: white; justify-content: center; align-items: center;", \
