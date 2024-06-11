@@ -10,16 +10,16 @@ found_page_response  db "HTTP/1.1 200 OK", CRLF
 index_page           db 10
                      html_start "Praneeth Jain"
                      flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: space-evenly; background-color: black; color: white;", \
-                        <h 1, "Moida Praneeth Jain">, \
+                        <div "font-size: 3.3rem;", ! "Moida Praneeth Jain">, \
                         pfp, \
-                        <flexrow "font-size: 24px; width: 30rem; justify-content: space-evenly;", \
+                        <flexrow "font-size: 2rem; width: 30rem; justify-content: space-evenly;", \
                            <link "/projects", ! "/projects">, \
                            <link "/skills", ! "/skills">, \
-                           <link "/about", ! "/about"> \
+                           <link "/blog", ! "/blog">, \
                         >, \
-                        <flexrow "font-size: 24px; width: 20rem; justify-content: space-evenly;", \
-                           <link "/resume", ! "/resume">, \
-                           <link "/links", ! "/blog"> \
+                        <flexrow "font-size: 2rem; width: 20rem; justify-content: space-evenly;", \
+                           <link "/about", ! "/about">, \
+                           <link "/links", ! "/links">, \
                         >, \
                      db 0
                      html_end
@@ -62,5 +62,20 @@ projects_page        db 10
                            <project_card "Advent of Code 2023", "Solutions to all the problems from AoC 2023", "Rust">, \
                            <project_card "CSES", "Solutions to the cses.fi problemset", "C++">, \
                         >, \
+                     db 0
+                     html_end
+
+not_found_page_response db "HTTP/1.1 404 Not Found", CRLF
+                        db "Content-Type: text/html; charset=utf-8", CRLF
+                        db "Connection: close", CRLF
+                        db CRLF
+                        db 0
+
+
+not_found_page       db 10
+                     html_start "Praneeth Jain"
+                     flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: center; background-color: black; color: white; text-align: centre;", \
+                        <div "font-size: 3.3rem;", ! "How Did We Get Here?">, \
+                        <link "/", <h 1,"Go Back">>, \
                      db 0
                      html_end

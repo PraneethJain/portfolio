@@ -54,49 +54,56 @@ main:
     call trim_first_line
 
     serve_route req, home
-    serve_route req, about
     serve_route req, projects
     serve_route req, skills
+    serve_route req, blog
+    serve_route req, about
+    serve_route req, links
     
   .serve_not_found:
-    print_char STDOUT, 'N'
-    print_char STDOUT, 10
-    print [client_fd], found_page_response
-    print [client_fd], index_page
+    print [client_fd], not_found_page_response
+    print [client_fd], not_found_page
     close [client_fd]
     jmp .mainloop
 
   .serve_home:
-    print_char STDOUT, 'H'
-    print_char STDOUT, 10
     print [client_fd], found_page_response
     print [client_fd], index_page
     close [client_fd]
     jmp .mainloop
 
-  .serve_about:
-    print_char STDOUT, 'A'
-    print_char STDOUT, 10
-    print [client_fd], found_page_response
-    print [client_fd], index_page
-    close [client_fd]
-    jmp .mainloop
-  
   .serve_projects:
-    print_char STDOUT, 'P'
-    print_char STDOUT, 10
     print [client_fd], found_page_response
     print [client_fd], projects_page
     close [client_fd]
     jmp .mainloop
 
   .serve_skills:
-    print_char STDOUT, 'S'
+    print [client_fd], found_page_response
+    print [client_fd], index_page
+    close [client_fd]
+    jmp .mainloop
+
+  .serve_blog:
+    print [client_fd], found_page_response
+    print [client_fd], index_page
+    close [client_fd]
+    jmp .mainloop
+
+  .serve_about:
+    print [client_fd], found_page_response
+    print [client_fd], index_page
+    close [client_fd]
+    jmp .mainloop
+  
+  .serve_links:
+    print_char STDOUT, 'P'
     print_char STDOUT, 10
     print [client_fd], found_page_response
     print [client_fd], index_page
     close [client_fd]
     jmp .mainloop
+
 
   print STDOUT, closing_info
   close [server_fd]
@@ -150,3 +157,5 @@ home     db "", 0
 about    db "about", 0
 projects db "projects", 0
 skills   db "skills", 0
+blog     db "blog", 0
+links    db "links", 0
