@@ -33,7 +33,6 @@ trim_first_line:
     mov byte [rdi], 0
     ret
 
-
 macro print fd, string
 {
   mov rdi, string

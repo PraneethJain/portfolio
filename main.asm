@@ -55,8 +55,6 @@ main:
 
     serve_route req, home
     serve_route req, projects
-    serve_route req, skills
-    serve_route req, blog
     serve_route req, about
     serve_route req, links
     
@@ -78,27 +76,13 @@ main:
     close [client_fd]
     jmp .mainloop
 
-  .serve_skills:
-    print [client_fd], found_page_response
-    print [client_fd], index_page
-    close [client_fd]
-    jmp .mainloop
-
-  .serve_blog:
-    print [client_fd], found_page_response
-    print [client_fd], index_page
-    close [client_fd]
-    jmp .mainloop
-
   .serve_about:
     print [client_fd], found_page_response
-    print [client_fd], index_page
+    print [client_fd], about_page
     close [client_fd]
     jmp .mainloop
   
   .serve_links:
-    print_char STDOUT, 'P'
-    print_char STDOUT, 10
     print [client_fd], found_page_response
     print [client_fd], links_page
     close [client_fd]
@@ -156,6 +140,4 @@ message         db "Hello from fasm!", 10, 0
 home     db "", 0
 about    db "about", 0
 projects db "projects", 0
-skills   db "skills", 0
-blog     db "blog", 0
 links    db "links", 0

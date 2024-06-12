@@ -14,10 +14,6 @@ index_page           db 10
                         pfp, \
                         <flexrow "font-size: 2rem; width: 30rem; justify-content: space-evenly;", \
                            <link "/projects", ! "/projects">, \
-                           <link "/skills", ! "/skills">, \
-                           <link "/blog", ! "/blog">, \
-                        >, \
-                        <flexrow "font-size: 2rem; width: 20rem; justify-content: space-evenly;", \
                            <link "/about", ! "/about">, \
                            <link "/links", ! "/links">, \
                         >, \
@@ -25,7 +21,7 @@ index_page           db 10
                      html_end
 
 links_page           db 10
-                     html_start "Praneeth Jain"
+                     html_start "Praneeth Jain | Links"
                      flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: center; background-color: black; color: white; font-size: 2rem;", \
                         <link "https://github.com/PraneethJain/", ! "Github">, \
                         <link "https://gitlab.com/PraneethJain", ! "Gitlab">, \
@@ -38,12 +34,27 @@ links_page           db 10
                         <link "https://www.facebook.com/profile.php?id=100087488941910", ! "Facebook">, \
                         <link "https://x.com/bants78", ! "X">, \
                      db 0
+                     html_end
 
+about_page           db 10
+                     html_start "Praneeth Jain | About"
+                     flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: center; background-color: black; color: white; font-size: 2rem;", \
+                        <pre "font-family: vt323; font-size: 1.5rem; line-height: 0.8rem;", \
+                           <about_item "Uptime:   ", "     19 years">, \
+                           <about_item "Host:     ", "     IIIT Hyderabad, 3rd year">, \
+                           <about_item "Kernel:   ", "     Computer Science Engineering">, \
+                           <about_item "Distro:   ", "     arch     / void">, \
+                           <about_item "WM:       ", "     hyprland / dwm">, \
+                           <about_item "IDE:      ", "     emacs    / helix">, \
+                           <about_item "Terminal: ", "     kitty    / st">, \
+                           <about_item "Shell:    ", "     fish      / bash">, \
+                        >, \
+   ;; Inspired from github-readme-terminal
                      db 0
                      html_end
 
 projects_page        db 10
-                     html_start "Projects"
+                     html_start "Praneeth Jain | Projects"
                      flexcol "min-width: 100vw; min-height: 100vh; background-color: black; color: white; justify-content: center; align-items: center;", \
                         <project_category "Projects", \
                            <project_card "Ardor", "A simple command line application to download, manage and watch currently airing anime.", "Python">, \

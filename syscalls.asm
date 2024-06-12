@@ -9,6 +9,7 @@ SYS_bind        equ 49
 SYS_listen      equ 50
 SYS_setsockopt  equ 54
 SYS_exit        equ 60
+SYS_time        equ 201
 
 SOCK_STREAM     equ 1
 AF_INET         equ 2
@@ -91,6 +92,11 @@ macro exit code
 macro close fd
 {
   syscall1 SYS_close, fd
+}
+
+macro time tloc
+{
+  syscall1 SYS_time, tloc
 }
 
 macro listen sockfd, backlog

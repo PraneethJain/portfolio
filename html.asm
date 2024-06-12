@@ -53,6 +53,21 @@ forward components
 common db '</div>', 10
 }
 
+macro span style, [components]
+{
+common db '<span style="',style,'">', 10
+forward components
+common db '</span>', 10
+}
+
+macro pre style, [components]
+{
+common db '<pre style="',style,'">', 10
+forward components
+common db '</pre>', 10
+}
+
+
 macro flexcol style, [components]
 {
 common db '<div style="display: flex; flex-direction: column; ',style,'">', 10
@@ -72,7 +87,7 @@ macro project_category category, [cards]
 {
 common
     div "font-size: 4rem; font-weight: 600; color: var(--secondary); text-align: center;", ! category
-    db '<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin: 4rem 0;">', 10 ;
+    db '<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin: 4rem 0;">', 10
 forward
     cards
 common
@@ -81,7 +96,6 @@ common
 
 macro project_card title, description, [tech_stack]
 {
-
 common
     db '<div style="display: flex; flex-direction: column; justify-content: space-between; border: 3px dashed #808080; padding: 1rem 0; text-align: center; width: 17rem; height: 17rem; margin: 1rem; border-radius: 0rem;">', 10
     div "font-size: 1.7rem; font-weight: 600; color: var(--primary)", ! title
@@ -92,4 +106,9 @@ forward
 common
     db '</div>'
     db '</div>', 10
+}
+
+macro about_item left, right
+{
+    flexrow "", <div "color: var(--accent)", ! left>, <div "", ! right>
 }
