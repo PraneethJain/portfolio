@@ -18,12 +18,12 @@ db '      --primary: #EADFB4;', 10
 db '      --secondary: #DEAC80;', 10
 db '      --accent: #B5C18E;', 10
 db '    }', 10
-db '    @media only screen and (max-width: 768px) {', 10
-db '      body {', 10
-db '      transform: scale(1.5);', 10
-db '      transform-origin: top;', 10
-db '      }', 10
-db '    }', 10
+;; db '    @media only screen and (max-width: 768px) {', 10
+;; db '      body {', 10
+;; db '      transform: scale(1.5);', 10
+;; db '      transform-origin: top;', 10
+;; db '      }', 10
+;; db '    }', 10
 db '    </style>', 10
 db '  </head>', 10
 db '  <body style="padding: 0; margin: 0; font-family: VT323;">', 10
@@ -92,8 +92,8 @@ common db '</div>', 10
 macro project_category category, [cards]
 {
 common
-    div "font-size: 4rem; font-weight: 600; color: var(--secondary); text-align: center;", ! category
-    db '<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin: 4rem 0;">', 10
+    div "font-size: 80px; font-weight: 600; color: var(--secondary); text-align: center;", ! category
+    db '<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin: 64px 0; padding: 0 32px;">', 10
 forward
     cards
 common
@@ -103,10 +103,10 @@ common
 macro project_card title, description, [tech_stack]
 {
 common
-    db '<div style="display: flex; flex-direction: column; justify-content: space-between; border: 3px dashed #808080; padding: 1rem 0; text-align: center; width: 17rem; height: 17rem; margin: 1rem; border-radius: 0rem;">', 10
-    div "font-size: 1.7rem; font-weight: 600; color: var(--primary)", ! title
-    div "font-size: 1.3rem; font-weight: 500; padding: 1rem;", ! description
-    db '<div style="display: flex; justify-content: space-evenly; font-size: 1.4rem; flex-wrap: wrap; font-weight: 550;">'
+    db '<div style="display: flex; flex-direction: column; justify-content: space-between; border: 4px dashed #808080; padding: 16px 0; text-align: center; width: 350px; height: 380px; margin: 32px;">', 10
+    div "font-size: 40px; font-weight: 600; color: var(--primary)", ! title
+    div "font-size: 24px; font-weight: 500; padding: 16px;", ! description
+    db '<div style="display: flex; justify-content: space-evenly; font-size: 28px; flex-wrap: wrap; font-weight: 550;">'
 forward
     div "", ! tech_stack
 common

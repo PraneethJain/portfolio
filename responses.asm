@@ -10,9 +10,9 @@ found_page_response  db "HTTP/1.1 200 OK", CRLF
 index_page           db 10
                      html_start "Praneeth Jain"
                      flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: space-evenly; background-color: black; color: white;", \
-                        <div "font-size: 3.3rem;", ! "Moida Praneeth Jain">, \
+                        <div "font-size: 60px; text-align: center;", ! "Moida Praneeth Jain">, \
                         pfp, \
-                        <flexrow "font-size: 2rem; width: 30rem; justify-content: space-evenly;", \
+                        <flexrow "font-size: 50px; min-width: max(40vw, 600px); justify-content: space-evenly;", \
                            <link "/projects", ! "/projects">, \
                            <link "/about", ! "/about">, \
                            <link "/links", ! "/links">, \
@@ -22,7 +22,7 @@ index_page           db 10
 
 links_page           db 10
                      html_start "Praneeth Jain | Links"
-                     flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: center; background-color: black; color: white; font-size: 2rem;", \
+                     flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: center; background-color: black; color: white; font-size: 50px;", \
                         <link "https://github.com/PraneethJain/", ! "Github">, \
                         <link "https://gitlab.com/PraneethJain", ! "Gitlab">, \
                         <link "https://stackoverflow.com/users/18171521/praneeth-jain", ! "StackOverflow">, \
@@ -38,8 +38,8 @@ links_page           db 10
 
 about_page           db 10
                      html_start "Praneeth Jain | About"
-                     flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: center; background-color: black; color: white; font-size: 2rem;", \
-                        <pre "font-family: vt323; font-size: 1.5rem; line-height: 0.8rem;", \
+                     flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: center; background-color: black; color: white; font-size: 50px;", \
+                        <pre "font-family: vt323; font-size: 50px; line-height: 15px;", \
                            <about_item "Uptime:   ", "     19 years">, \
                            <about_item "Host:     ", "     IIIT Hyderabad, 3rd year">, \
                            <about_item "Kernel:   ", "     Computer Science Engineering">, \
