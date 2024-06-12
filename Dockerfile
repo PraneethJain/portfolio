@@ -1,4 +1,4 @@
-FROM gcr.io/distroless/base-debian10
+FROM scratch
 COPY main /main
-CMD ["/main"]
-
+EXPOSE 8080
+ENTRYPOINT ["/main"]
