@@ -18,6 +18,12 @@ db '      --primary: #EADFB4;', 10
 db '      --secondary: #DEAC80;', 10
 db '      --accent: #B5C18E;', 10
 db '    }', 10
+db '    @media only screen and (max-width: 768px) {', 10
+db '      body {', 10
+db '      transform: scale(1.5);', 10
+db '      transform-origin: top;', 10
+db '      }', 10
+db '    }', 10
 db '    </style>', 10
 db '  </head>', 10
 db '  <body style="padding: 0; margin: 0; font-family: VT323;">', 10
