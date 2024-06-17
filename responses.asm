@@ -17,6 +17,7 @@ index_page           db 10
                            <link "/about", ! "/about">, \
                            <link "/links", ! "/links">, \
                         >, \
+                        <div "font-size: 24px;", ! "Made in x86-64 Assembly", <link "https://github.com/praneethJain/portfolio", ! "source">>, \
                      db 0
                      html_end
 
