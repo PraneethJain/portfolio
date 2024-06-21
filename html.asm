@@ -100,9 +100,10 @@ common
     db '</div>', 10
 }
 
-macro project_card title, description, [tech_stack]
+macro project_card url, title, description, [tech_stack]
 {
 common
+    db '<a href="', url, '" style="text-decoration: none; color: inherit;">', 10
     db '<div style="display: flex; flex-direction: column; justify-content: space-between; border: 4px dashed #808080; padding: 16px 0; text-align: center; width: 350px; height: 380px; margin: 32px;">', 10
     div "font-size: 40px; font-weight: 600; color: var(--primary)", ! title
     div "font-size: 24px; font-weight: 500; padding: 16px;", ! description
@@ -112,6 +113,7 @@ forward
 common
     db '</div>'
     db '</div>', 10
+    db '</a>', 10
 }
 
 macro about_item left, right
