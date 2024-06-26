@@ -32,7 +32,7 @@ db '  <body style="padding: 0; margin: 0; font-family: VT323;">', 10
 macro html_end
 {
 db '  </body>', 10
-db '</html>', 10
+db '</html>', 10, 0
 }
 
 macro ! text

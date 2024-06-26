@@ -17,8 +17,26 @@ index_page           db 10
                            <link "/about", ! "/about">, \
                            <link "/links", ! "/links">, \
                         >, \
-                        <div "font-size: 24px;", ! "Made in x86-64 Assembly", <link "https://github.com/praneethJain/portfolio", ! "source">>, \
-                     db 0
+                        <div "font-size: 24px;", \
+                           ! "Made in x86-64 Assembly", \
+                           <link "https://github.com/praneethJain/portfolio", ! "source">, \
+                        >
+                     html_end
+
+index_page_cgi       db 10
+                     html_start "Praneeth Jain"
+                     flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: space-evenly; background-color: black; color: white;", \
+                        <div "font-size: 60px; text-align: center;", ! "Moida Praneeth Jain">, \
+                        pfp, \
+                        <flexrow "font-size: 50px; min-width: max(40vw, 600px); justify-content: space-evenly;", \
+                           <link "/projects.cgi", ! "/projects">, \
+                           <link "/about.cgi", ! "/about">, \
+                           <link "/links.cgi", ! "/links">, \
+                        >, \
+                        <div "font-size: 24px;", \
+                           ! "Made in x86-64 Assembly", \
+                           <link "https://github.com/praneethJain/portfolio", ! "source">, \
+                        >
                      html_end
 
 links_page           db 10
