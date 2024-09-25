@@ -67,7 +67,6 @@ main:
   .serve_home:
     print [client_fd], found_page_response
     print [client_fd], index_page
-    print STDOUT, index_page
     close [client_fd]
     jmp .mainloop
 

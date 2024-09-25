@@ -18,6 +18,11 @@ db '      --primary: #EADFB4;', 10
 db '      --secondary: #DEAC80;', 10
 db '      --accent: #B5C18E;', 10
 db '    }', 10
+db '    * {', 10
+db '      margin: 0;', 10
+db '      padding: 0;', 10
+db '    }', 10
+;
 ;; db '    @media only screen and (max-width: 768px) {', 10
 ;; db '      body {', 10
 ;; db '      transform: scale(1.5);', 10
@@ -37,7 +42,7 @@ db '</html>', 10, 0
 
 macro ! text
 {
-db text, 10
+db text
 }
 
 macro h i, text
@@ -47,7 +52,7 @@ db '<h',i+'0','>',text,'</h',i+'0','>', 10
 
 macro link href, component
 {
-db '<a href="',href,'" style="color: #3391ff">'
+db '<a href="',href,'" style="color: white">'
 component
 db '</a>', 10
 }
@@ -92,28 +97,17 @@ common db '</div>', 10
 macro project_category category, [cards]
 {
 common
-    div "font-size: 80px; font-weight: 600; color: var(--secondary); text-align: center;", ! category
-    db '<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin: 64px 0; padding: 0 32px;">', 10
+    db '<div style="font-size: 64px; color: var(--secondary); margin: 32px 0 12px 0;">', 10
+    ! "section ."#`category#" readable writable"
 forward
     cards
 common
     db '</div>', 10
 }
 
-macro project_card url, title, description, [tech_stack]
+macro project url, title, description
 {
-common
-    db '<a href="', url, '" style="text-decoration: none; color: inherit;">', 10
-    db '<div style="display: flex; flex-direction: column; justify-content: space-between; border: 4px dashed #808080; padding: 16px 0; text-align: center; width: 350px; height: 380px; margin: 32px;">', 10
-    div "font-size: 40px; font-weight: 600; color: var(--primary)", ! title
-    div "font-size: 24px; font-weight: 500; padding: 16px;", ! description
-    db '<div style="display: flex; justify-content: space-evenly; font-size: 28px; flex-wrap: wrap; font-weight: 550;">'
-forward
-    div "", ! tech_stack
-common
-    db '</div>'
-    db '</div>', 10
-    db '</a>', 10
+    div "font-size: 32px; margin: 0 0 12px 0; color: white;", <span "", ! "-" >, <link url, ! title>, <span "", ! ": "> ,<span "", ! description>
 }
 
 macro about_item left, right
