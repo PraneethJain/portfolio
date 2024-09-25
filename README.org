@@ -1,0 +1,19 @@
+#+title: Portfolio Website
+
+Hosted [[https://praneeth.envs.sh/][here]]
+
++ Portfolio website written in [[https://flatassembler.net/][fasm]].
++ Statically linked ELF-64 x86-64 executable [[./main][main]].
+
+[[./website.png]]
+
+Inspired from [[https://www.youtube.com/watch?v=b-q4QBy52AA][tsoding]]'s livestream
+
+* Running the website
+** Built-in Web Server
++ Run the executable `./main`
++ The website will be hosted on port `8080`
+
+** Common Gateway Interface (CGI)
++ Run the build script `./cgi.sh`
++ The `cgi-bin` folder will be generated
