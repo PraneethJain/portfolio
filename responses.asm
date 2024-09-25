@@ -18,7 +18,7 @@ index_page           db 10
                            <link "/links", ! "/links">, \
                         >, \
                         <div "font-size: 24px;", \
-                           ! "Made in x86-64 Assembly", \
+                           ! "Made in x86-64 Assembly: ", \
                            <link "https://github.com/praneethJain/portfolio", ! "source">, \
                         >
                      html_end
@@ -34,7 +34,7 @@ index_page_cgi       db 10
                            <link "/links.cgi", ! "/links">, \
                         >, \
                         <div "font-size: 24px;", \
-                           ! "Made in x86-64 Assembly", \
+                           ! "Made in x86-64 Assembly: ", \
                            <link "https://github.com/praneethJain/portfolio", ! "source">, \
                         >
                      html_end
