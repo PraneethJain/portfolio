@@ -59,14 +59,14 @@ about_page           db 10
                      html_start "Praneeth Jain | About"
                      flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: center; background-color: black; color: white; font-size: 50px;", \
                         <pre "font-family: vt323; font-size: 50px; line-height: 15px;", \
-                           <about_item "Uptime:   ", "     19 years">, \
+                           <about_item "Uptime:   ", "     20 years">, \
                            <about_item "Host:     ", "     IIIT Hyderabad, 3rd year">, \
                            <about_item "Kernel:   ", "     Computer Science Engineering">, \
                            <about_item "Distro:   ", "     void">, \
-                           <about_item "WM:       ", "     penrose">, \
-                           <about_item "IDE:      ", "     doom emacs">, \
-                           <about_item "Terminal: ", "     alacritty">, \
-                           <about_item "Shell:    ", "     fish">, \
+                           <about_item "WM:       ", "     dwm">, \
+                           <about_item "Editor:   ", "     (neo)vim">, \
+                           <about_item "Terminal: ", "     st">, \
+                           <about_item "Shell:    ", "     bash">, \
                         >, \
                      db 0
                      html_end
@@ -108,7 +108,8 @@ projects_page        db 10
                         <project_category "problemsolving", \
                            <project  "https://github.com/PraneethJain/Project-Euler", "Project Euler", "Solutions to the first hundred and a few other problems from Project Euler">, \
                            <project  "https://github.com/PraneethJain/Advent-of-Code-2022", "Advent of Code 2022", "Solutions to the first fourteen problems from AoC 2022">, \
-                           <project  "https://github.com/PraneethJain/Advent-of-Code-2023", "Advent of Code 2023", "Solutions to all the problems from AoC 2023">, \
+                           <project  "https://github.com/PraneethJain/Advent-of-Code-2023", "Advent of Code 2023", "Solutions to all the problems from AoC 2023 in Rust">, \
+                           <project  "https://github.com/PraneethJain/Advent-of-Code-2024", "Advent of Code 2024", "Solutions to a couple problems from AoC 2024 in Idris2">, \
                            <project  "https://github.com/PraneethJain/CSES/", "CSES", "Solutions to the cses.fi problemset">, \
                         >, \
                      db 0
