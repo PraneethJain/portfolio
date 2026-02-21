@@ -59,8 +59,8 @@ about_page           db 10
                      html_start "Praneeth Jain | About"
                      flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: center; background-color: black; color: white; font-size: 50px;", \
                         <pre "font-family: vt323; font-size: 50px; line-height: 15px;", \
-                           <about_item "Uptime:   ", "     20 years">, \
-                           <about_item "Host:     ", "     IIIT Hyderabad, 3rd year">, \
+                           <about_item "Uptime:   ", "     21 years">, \
+                           <about_item "Host:     ", "     IIIT Hyderabad, 4th year">, \
                            <about_item "Kernel:   ", "     Computer Science Engineering">, \
                            <about_item "Distro:   ", "     void">, \
                            <about_item "WM:       ", "     dwm">, \
