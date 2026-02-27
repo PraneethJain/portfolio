@@ -26,7 +26,9 @@ main:
 
   mov [serveraddr_in.sin_family], word AF_INET
   mov [serveraddr_in.sin_addr], dword 0
-  mov [serveraddr_in.sin_port], word 36895
+  mov ax, [port]
+  xchg al, ah
+  mov [serveraddr_in.sin_port], ax
 
   print STDOUT, binding_info
   bind [server_fd], serveraddr_in.sin_family, serveraddr_in.size
@@ -121,6 +123,7 @@ serveraddr_in   servaddr_in_struc
 clientaddr_in   servaddr_in_struc
 clientaddr_len  dd clientaddr_in.size
 enable          dd 1
+port            dw 8080
 
 req             rb MAX_REQ_LEN
 req_len         rq 1
