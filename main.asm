@@ -80,8 +80,14 @@ main:
     jmp .mainloop
 
   .serve_about:
+    call populate_age
     print [client_fd], found_page_response
-    print [client_fd], about_page
+    mov rdi, about_page
+    mov rsi, about_page_rendered
+    mov rdx, about_template_vars
+    mov rcx, about_template_vars_count
+    call render_template
+    print [client_fd], about_page_rendered
     close [client_fd]
     jmp .mainloop
   
@@ -126,6 +132,14 @@ port            dw 8080
 
 req             rb MAX_REQ_LEN
 req_len         rq 1
+about_page_rendered rb MAX_REQ_LEN
+
+about_template_vars:
+                dq age_key, age_value
+about_template_vars_count = ($ - about_template_vars) / 16
+
+age_key   db "{{age}}", 0
+age_value db "Failed to calculate age", 0
 
 
 ;; debug messages
@@ -204,9 +218,7 @@ about_page           db 10
                      html_start "Praneeth Jain | About"
                      flexcol "min-width: 100vw; min-height: 100vh; align-items: center; justify-content: center; background-color: black; color: white; font-size: 50px;", \
                         <pre "font-family: vt323; font-size: 50px; line-height: 15px;", \
-                           <about_item "Uptime:   ", "     21 years">, \
-                           <about_item "Host:     ", "     IIIT Hyderabad, 4th year">, \
-                           <about_item "Kernel:   ", "     Computer Science Engineering">, \
+                           <about_item "Uptime:   ", "     {{age}} seconds">, \
                            <about_item "Distro:   ", "     void">, \
                            <about_item "WM:       ", "     dwm">, \
                            <about_item "Editor:   ", "     (neo)vim">, \

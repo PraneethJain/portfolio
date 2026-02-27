@@ -94,9 +94,9 @@ macro close fd
   syscall1 SYS_close, fd
 }
 
-macro time tloc
+macro time
 {
-  syscall1 SYS_time, tloc
+  syscall1 SYS_time, 0
 }
 
 macro listen sockfd, backlog
