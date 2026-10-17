@@ -204,7 +204,7 @@ links_page           db 10
                         <link "https://github.com/PraneethJain/", ! "Github">, \
                         <link "https://gitlab.com/PraneethJain", ! "Gitlab">, \
                         <link "https://stackoverflow.com/users/18171521/praneeth-jain", ! "StackOverflow">, \
-                        <link "https://www.linkedin.com/in/praneeth-jain/", ! "LinkedIn">, \
+                        <link "https://www.linkedin.com/in/moida-praneeth-jain-b01482253", ! "LinkedIn">, \
                         <link "mailto:praneethjain005@gmail.com", ! "Mail">, \
                         <link "https://discord.com/users/478215148234866728", ! "Discord">, \
                         <link "https://steamcommunity.com/profiles/76561198879507582", ! "Steam">, \
